@@ -7,7 +7,7 @@ from django.db import models
 class Article(models.Model):
     time = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100)
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True)
     summary = RichTextUploadingField(blank=True, default='')
     content = RichTextUploadingField(blank=True, default='')
 
