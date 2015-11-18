@@ -114,7 +114,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static/'
 
-MEDIA_ROOT = 'media/'
+MEDIA_ROOT = BASE_DIR + '/media/'
 MEDIA_URL = '/media/'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
