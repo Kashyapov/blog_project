@@ -1,3 +1,4 @@
+{% load comments %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -64,6 +65,28 @@
 
     </div>
 </div>
+
+<ul>
+{#    {{ request.get_full_path as current_page }}#}
+    {% get_comment_list for request.get_full_path as comment_list %}
+    {% for comment in comment_list %}
+        <li>
+            <div class="frame">
+                <a href="{{ child.get_absolute_url }}">
+                    {#						<div class="pict"><img src="{% thumbnail child.get_image 235x160 crop='smart' %}" alt=""/></div>#}
+                    <div class="text">
+                        <strong>{{ comment.name }}</strong>
+
+                        <p>{{ comment.comment }}</p>
+                    </div>
+                </a>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+
+
+{% render_comment_form for current_page %}
 
 
 <script src="http://yastatic.net/jquery/2.1.4/jquery.min.js"></script>
