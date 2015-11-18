@@ -1,9 +1,31 @@
 {% extends 'base.html' %}
+{% load comments %}
 
 {% block content %}
 
         <h2>{{ article }}</h2>
         <p>{{ article.time }}</p>
         {{ article.content|safe }}
+
+<ul>
+    {% get_comment_list for article as comment_list %}
+    {% for comment in comment_list %}
+        <li>
+            <div class="frame">
+                <a href="{{ child.get_absolute_url }}">
+                    {#						<div class="pict"><img src="{% thumbnail child.get_image 235x160 crop='smart' %}" alt=""/></div>#}
+                    <div class="text">
+                        <strong>{{ comment.name }}</strong>
+
+                        <p>{{ comment.comment }}</p>
+                    </div>
+                </a>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+
+
+{% render_comment_form for article %}
 
 {% endblock %}

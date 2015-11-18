@@ -40,11 +40,14 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_comments',
     'django.contrib.sites',
+    'customcomments',
     # 'tinymce',
     'ckeditor',
     'ckeditor_uploader',
     'blog',
 )
+
+COMMENTS_APP = 'customcomments'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -75,10 +78,6 @@ TEMPLATES = [
         },
     },
 ]
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.request',
-)
 
 WSGI_APPLICATION = 'blog_project.wsgi.application'
 
@@ -111,7 +110,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -133,3 +132,5 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 # }
 # TINYMCE_SPELLCHECKER = True
 # TINYMCE_COMPRESSOR = True
+
+SITE_ID = 1
