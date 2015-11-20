@@ -1,0 +1,4 @@
+22 nov 2015:
+Add symbol link to django_comments and customcomments project
+ln -s /path/to/django_comments /path/to/your/project
+ln -s /path/to/customcomments /path/to/your/project
