@@ -38,9 +38,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     # 'tinymce',
+    'pytz',
     'ckeditor',
     'ckeditor_uploader',
+    'django_comments',
+    'customcomments',
     'blog',
 )
 
@@ -118,6 +122,12 @@ MEDIA_ROOT = BASE_DIR + '/media/'
 MEDIA_URL = '/media/'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
+# Django site framework
+SITE_ID = 1
+
+# Comments Framework
+COMMENTS_APP = "customcomments"
 
 # TINYMCE_DEFAULT_CONFIG = {
 #     'plugins': "table,spellchecker,paste,searchreplace",
