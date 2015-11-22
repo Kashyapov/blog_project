@@ -122,6 +122,10 @@ STATIC_ROOT = 'static/'
 MEDIA_ROOT = BASE_DIR + '/media/'
 MEDIA_URL = '/media/'
 
+STATICFILES_DIRS = (
+     "static",
+ )
+
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # TINYMCE_DEFAULT_CONFIG = {

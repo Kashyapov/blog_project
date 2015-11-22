@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
-{% load comments %}
-
+{% load comments staticfiles %}
 {% block content %}
 
         <h2>{{ article }}</h2>
@@ -27,5 +26,14 @@
 
 
 {% render_comment_form for article %}
+
+<script src="{% static "base/js/site.js" %}"></script>
+<script src="{% static "base/js/comment.js" %}"></script>
+<script src="{% static "base/js/jquery.validationEngine-ru.js" %}" type="text/javascript" charset="utf-8">
+</script>
+<script src="{% static "base/js/jquery.validationEngine.js" %}" type="text/javascript" charset="utf-8">
+</script>
+
+<link rel="stylesheet" href="{% static "base/css/validationEngine.jquery.css" %}" type="text/css"/>
 
 {% endblock %}
